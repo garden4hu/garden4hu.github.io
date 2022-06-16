@@ -8,7 +8,9 @@ ffmepg 在命令行还有编程开发里，都需要有 option 的存在。无�
 
 [cnblog-AVOption](https://www.cnblogs.com/TaigaCon/p/10182169.html)
 
-[# ffmpeg结构体解析-AVClass 和 AVOption](https://www.jianshu.com/p/25a087619b7c)
+[ffmpeg结构体解析-AVClass 和 AVOption](https://www.jianshu.com/p/25a087619b7c)
+
+[ffmpeg中AVOption的实现分析](https://www.cnblogs.com/tocy/p/ffmpeg-libavutil-avoption.html)
 
 让我们从 `avformat_open_input` 开始，
 `avformat_open_input(AVFormatContext **ps, const char *filename, const AVInputFormat *fmt, AVDictionary **options)` 中，最后一项就是 options，在 ffplay 中，其用法如下：
@@ -32,7 +34,7 @@ FFFormatContext 与 AVFormatContext
 ```text
    --------------->|----------------------| <------ The Address
         |          |                      |
-        |          |     FormatContext    |
+        |          |   AVFormatContext    |
         |          |                      |
  FFFormatContext   |----------------------|
         |          |                      |
